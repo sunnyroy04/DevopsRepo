@@ -1,1 +1,2 @@
-echo "Enter your name:"; read name  
+#!/bin/bash
+echo "Sunny kumar first code"
