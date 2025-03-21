@@ -20,4 +20,6 @@ jobs:
 
       - name: Run ShellCheck
         run: |
-          find . -type f -name "*.sh" -exec shellcheck {} +
+            echo "Running ShellCheck on all Bash scripts..."
+            find . -type f -name "*.sh" -exec shellcheck {} +
+            echo "ShellCheck completed successfully!"
