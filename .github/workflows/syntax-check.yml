@@ -1,0 +1,23 @@
+name: Bash Syntax Check
+
+on:
+  push:
+    branches: [ main, new ]
+  pull_request:
+    branches: [ main, new ]
+
+jobs:
+  check-syntax:
+    name: Check Bash Syntax
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Run ShellCheck
+        run: |
+          find . -type f -name "*.sh" -exec shellcheck {} +
