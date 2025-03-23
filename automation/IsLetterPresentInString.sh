@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Enter a String For Pattern Matching: " string
-read -p "Enter the Letter you want to check: " letter
+read -r -p "Enter a String For Pattern Matching: " string
+read -r -p "Enter the Letter you want to check: " letter
 
 a=0
 for ((i = 0; i < ${#string}; i++)); do
