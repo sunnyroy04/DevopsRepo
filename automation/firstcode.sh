@@ -1,1 +1,0 @@
-echo "Hi i am first Code.sh"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Enter a number: " num
+read -r -p "Enter a number: " num
 
 for i in {1..10}
 do
