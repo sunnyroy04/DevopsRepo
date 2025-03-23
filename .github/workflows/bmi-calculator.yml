@@ -5,7 +5,7 @@ on:
     inputs:
       weight:
         description: "Enter your weight in Kg"
-        required: true  # Fixed spelling (was 'reguired')
+        required: true
         type: string
       height:
         description: "Enter your height in meters"
@@ -14,13 +14,12 @@ on:
 
 jobs:
   calculate-bmi:
-    runs-on: ubuntu-latest  # Fixed spelling (was 'ubu ntu-latest')
+    runs-on: ubuntu-latest 
 
     steps:
-      - name: Checkout Repository  # Fixed 'names' -> 'name'
-        uses: actions/checkout@v4  # Fixed 'usage' -> 'uses'
-
-      - name: Calculate BMI  # Fixed 'runs' -> 'run'
+      - name: Checkout Repository 
+        uses: actions/checkout@v4 
+      - name: Calculate BMI  
         run: |
           # Read user input from GitHub Actions UI
           WEIGHT=${{ inputs.weight }}
