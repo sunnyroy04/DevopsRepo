@@ -45,3 +45,10 @@ jobs:
         with:
           name: updated-file-list
           path: file_list.txt
+      - name: Commit & Push Updated file_list.txt
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add file_list.txt
+          git commit -m "Auto-update file_list.txt"
+          git push origin main || echo "No changes to commit."
