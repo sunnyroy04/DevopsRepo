@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Enter string " string
-read -p "Enter letter " letter
+read -r -p "Enter string " string
+read -r -p "Enter letter " letter
 
 echo "Number of times $letter is Present in $string"
 
