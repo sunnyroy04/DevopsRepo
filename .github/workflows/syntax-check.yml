@@ -41,7 +41,7 @@ jobs:
           done
 
       - name: Upload Updated File List
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: updated-file-list
           path: file_list.txt
