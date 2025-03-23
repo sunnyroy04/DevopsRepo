@@ -23,3 +23,25 @@ jobs:
             echo "Running ShellCheck on all Bash scripts..."
             find . -type f -name "*.sh" -exec shellcheck {} +
              echo "ShellCheck completed successfully!"
+      - name: Ensure file_list.txt Exists
+        run: |
+          if [ ! -f file_list.txt ]; then
+            touch file_list.txt
+            echo "Created file_list.txt"
+          fi
+
+      - name: Add Error-Free Scripts to file_list.txt
+        run: |
+          echo "Adding valid scripts to file_list.txt..."
+          for script in $(find . -name "*.sh"); do
+            if ! grep -q "$script" file_list.txt; then
+              echo "$script" >> file_list.txt
+              echo "✅ Added: $script"
+            fi
+          done
+
+      - name: Upload Updated File List
+        uses: actions/upload-artifact@v3
+        with:
+          name: updated-file-list
+          path: file_list.txt
