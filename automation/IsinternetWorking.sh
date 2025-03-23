@@ -1,4 +1,3 @@
-# Updated Script
 #!/bin/bash
 
 if ping -n 1 google.com > /dev/null 2>&1; then

@@ -4,4 +4,4 @@ read -r -p "Enter letter " letter
 
 echo "Number of times $letter is Present in $string"
 
-grep -o $letter <<<"$letter" | wc -l
+grep -o $letter <<<"$string" | wc -l
