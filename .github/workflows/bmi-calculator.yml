@@ -1,0 +1,49 @@
+name: BMI Calculator
+
+on:
+  workflow_dispatch:
+    inputs:
+      weight:
+        description: "Enter your weight in Kg"
+        required: true
+        type: string
+      height:
+        description: "Enter your height in meters"
+        required: true
+        type: string
+
+jobs:
+  calculate-bmi:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout Repository 
+        uses: actions/checkout@v4 
+      - name: Calculate BMI  
+        run: |
+          # Read user input from GitHub Actions UI
+          WEIGHT=${{ inputs.weight }}
+          HEIGHT=${{ inputs.height }}
+
+          # Validate input
+          if [[ -z "$WEIGHT" || -z "$HEIGHT" || "$HEIGHT" == "0" ]]; then
+            echo "Invalid input! Weight and height must be non-zero numbers."
+            exit 1
+          fi
+          
+          # Calculate BMI
+          BMI=$(echo "scale=2; $WEIGHT / ($HEIGHT * $HEIGHT)" | bc)
+
+          # Determine BMI category
+          if (( $(echo "$BMI < 18.5" | bc -l) )); then
+            CATEGORY="Underweight"
+          elif (( $(echo "$BMI >= 18.5 && $BMI < 24.9" | bc -l) )); then
+            CATEGORY="Normal weight"
+          elif (( $(echo "$BMI >= 25 && $BMI < 29.9" | bc -l) )); then
+            CATEGORY="Overweight"
+          else
+            CATEGORY="Obese"
+          fi
+
+          # Print results
+          echo "Your BMI is: $BMI ($CATEGORY)"

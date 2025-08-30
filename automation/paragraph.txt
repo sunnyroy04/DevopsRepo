@@ -1,0 +1,6 @@
+Sunny Kumar: A Passionate Developer and Innovator
+Sunny Kumar is a dedicated and skilled developer with expertise in C++, JavaScript, React, and full-stack development. With a strong passion for problem-solving and software engineering, he consistently challenges himself with advanced programming concepts, including recursion, memory management, and system design.
+
+His journey in tech has been marked by notable achievements, including securing the second runner-up position in TechTantra, a prestigious coding contest at NIET's Annual Technical Fest, Ebullience 2024. He has also built several innovative projects, such as a Flashcard Learning Tool, a WhatsApp clone with video conferencing, and a secure messaging app with real-time translation and AI integration.
+
+Sunny’s curiosity extends beyond development—he is an avid traveler and music enthusiast, with a special love for Ghulam Ali’s ghazals. His ability to blend technical skills with creativity makes him a standout individual in the tech community. Always eager to learn and improve, Sunny is on a mission to push the boundaries of technology and contribute meaningfully to the world of software development. 🚀
